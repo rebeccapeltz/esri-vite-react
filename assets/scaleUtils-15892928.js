@@ -1,0 +1,1 @@
+import{bc as u,bd as c,be as i}from"./index-4f223f87.js";const e=96;function p(n,t){const r=t||n.extent,o=n.width,a=u(r==null?void 0:r.spatialReference);return r&&o?r.width/o*a*c*e:0}function b(n,t){return n/(u(t)*c*e)}function h(n,t,r){return f(n,t)&&s(n,r)}function f(n,t){return t===0||i(n,t)||n<t}function s(n,t){return t===0||i(n,t)||n>t}export{h as d,p as i,b as o};
