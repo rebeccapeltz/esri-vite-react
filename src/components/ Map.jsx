@@ -1,13 +1,12 @@
 import React, { useRef, useEffect } from "react";
-import Bookmarks from '@arcgis/core/widgets/Bookmarks';
-import Expand from '@arcgis/core/widgets/Expand';
+import Bookmarks from "@arcgis/core/widgets/Bookmarks";
+import Expand from "@arcgis/core/widgets/Expand";
 import MapView from "@arcgis/core/views/MapView";
 import WebMap from "@arcgis/core/WebMap";
 
 import "../App.css";
 
 export default function Map() {
-
   const mapDiv = useRef(null);
 
   useEffect(() => {
@@ -17,25 +16,25 @@ export default function Map() {
        */
       const webmap = new WebMap({
         portalItem: {
-          id: "aa1d3f80270146208328cf66d022e09c"
-        }
+          id: "aa1d3f80270146208328cf66d022e09c",
+        },
       });
 
       const view = new MapView({
         container: mapDiv.current,
-        map: webmap
+        map: webmap,
       });
 
       const bookmarks = new Bookmarks({
         view,
         // allows bookmarks to be added, edited, or deleted
-        editingEnabled: true
+        editingEnabled: true,
       });
 
       const bkExpand = new Expand({
         view,
         content: bookmarks,
-        expanded: true
+        expanded: true,
       });
 
       // Add the widget to the top-right corner of the view
@@ -52,7 +51,9 @@ export default function Map() {
     }
   }, [mapDiv]);
 
-  return <div className="mapDiv" ref={mapDiv}></div>;
+  return (
+    <div style= {{width: "80%"}}>
+      <div className="mapDiv" ref={mapDiv} style={{"height":"100vh", "width":"100%"}}></div>
+    </div>
+  );
 }
-
-
